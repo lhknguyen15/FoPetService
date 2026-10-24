@@ -82,6 +82,24 @@ body {
   @apply bg-background font-sans text-foreground antialiased;
 }
 
+@layer components {
+  .page-container {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+
+  .section-space {
+    @apply py-16 sm:py-20;
+  }
+
+  .section-eyebrow {
+    @apply mb-3 text-xs font-extrabold tracking-[0.12em] text-primary;
+  }
+
+  .section-title {
+    @apply font-heading text-[clamp(1.75rem,3vw,2.25rem)] leading-tight tracking-tight text-foreground;
+  }
+}
+
 ::selection {
   background: #eadcb5;
   color: #523719;

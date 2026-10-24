@@ -21,6 +21,10 @@ import { BookingForm } from "@/components/booking-form";
 import { BookingLink } from "@/components/booking-link";
 import { BookingProvider } from "@/components/booking-provider";
 import { servicePackages, type ServiceId } from "@/lib/services";
+import { CareJourney } from "@/components/care-journey";
+import { FaqSection } from "@/components/faq-section";
+import { ContactSection } from "@/components/contact-section";
+import { navigationLinks, shopContact } from "@/lib/site-config";
 
 const serviceIcons: Record<ServiceId, typeof Bath> = {
   bath: Bath,
@@ -230,6 +234,8 @@ export default function Home() {
           </div>
         </section>
 
+        <CareJourney />
+
         <section id="san-pham" className="py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-5 sm:px-8">
             <div className="mb-9 flex flex-col justify-between gap-4 sm:mb-12 sm:flex-row sm:items-end">
@@ -313,7 +319,7 @@ export default function Home() {
 
         <section id="dat-lich" className="mx-auto max-w-7xl scroll-mt-36 px-5 py-16 sm:px-8 sm:py-24 md:scroll-mt-28">
           <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:gap-16">
-            <div id="lien-he" className="max-w-lg scroll-mt-28">
+            <div className="max-w-lg">
               <p className="mb-3 text-[11px] font-extrabold tracking-[0.15em] text-primary">ĐẶT LỊCH CHO BÉ</p>
               <h2 className="font-heading text-2xl leading-tight tracking-tight text-[#54381c] sm:text-3xl lg:text-4xl">Hẹn FoPet <span className="text-primary">một ngày vui.</span></h2>
               <p className="mt-4 text-sm leading-7 text-[#75654e]">Để lại thông tin và combo bạn quan tâm. Nhân viên sẽ liên hệ để tư vấn, kiểm tra lịch trống và xác nhận thời gian phù hợp.</p>
@@ -326,19 +332,36 @@ export default function Home() {
           </div>
         </section>
 
-        <footer className="border-t border-[#e9dec8] bg-secondary/50">
-          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 py-7 text-center sm:px-8 md:flex-row md:text-left">
-            <Link href="#top" className="flex items-center" aria-label="FoPet Service, lên đầu trang">
-              <Image
-                src="/images/fopet-logo-transparent.png"
-                alt="Logo FoPet Service"
-                width={1024}
-                height={1024}
-                className="size-14 object-cover"
-              />
-            </Link>
-            <p className="text-xs text-[#74644d]">Chăm bé bằng cả sự dịu dàng. © 2026 FoPet Service</p>
-            <Link href="#top" className="text-xs font-bold text-primary hover:underline focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">Lên đầu trang ↑</Link>
+        <FaqSection />
+        <ContactSection />
+
+        <footer className="border-t border-border bg-secondary/50">
+          <div className="page-container grid gap-8 py-10 sm:grid-cols-2 lg:grid-cols-[1.1fr_.7fr_1.2fr]">
+            <div>
+              <Link href="#top" className="inline-flex items-center gap-3 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring" aria-label="FoPet Service, lên đầu trang">
+                <Image src="/images/fopet-logo-transparent.png" alt="Logo FoPet Service" width={1024} height={1024} className="size-16 object-contain" />
+                <span className="font-heading text-xl text-foreground">FoPet Service</span>
+              </Link>
+              <p className="mt-3 max-w-xs text-sm leading-6 text-muted-foreground">Chăm bé bằng cả sự dịu dàng. Một nơi để sen khám phá dịch vụ và đồ dùng dành cho những người bạn bốn chân.</p>
+            </div>
+            <nav aria-label="Điều hướng chân trang">
+              <h2 className="font-bold text-foreground">Khám phá FoPet</h2>
+              <ul className="mt-3 space-y-1">
+                {navigationLinks.map((item) => <li key={item.href}><Link href={item.href} className="inline-flex min-h-11 items-center rounded-lg text-sm text-muted-foreground hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">{item.label}</Link></li>)}
+                <li><Link href="#cau-hoi" className="inline-flex min-h-11 items-center rounded-lg text-sm text-muted-foreground hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">Câu hỏi thường gặp</Link></li>
+              </ul>
+            </nav>
+            <div>
+              <h2 className="font-bold text-foreground">Thông tin cửa hàng {shopContact.isDemo && <span className="text-xs font-normal text-muted-foreground">(minh họa)</span>}</h2>
+              <p className="mt-4 text-sm leading-6 text-muted-foreground">{shopContact.address}</p>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">{shopContact.hours}</p>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">Điện thoại: {shopContact.phone}</p>
+              <Link href="#lien-he" className="mt-3 inline-flex min-h-11 items-center gap-1 rounded-full text-sm font-bold text-primary hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">Xem thông tin liên hệ <ArrowUpRight aria-hidden="true" className="size-4" /></Link>
+            </div>
+          </div>
+          <div className="page-container flex flex-col justify-between gap-3 border-t border-border py-5 text-sm text-muted-foreground sm:flex-row">
+            <p>© 2026 FoPet Service · Dự án thực hành cá nhân.</p>
+            <Link href="#top" className="inline-flex min-h-11 items-center self-start rounded-full font-semibold text-primary hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring">Lên đầu trang ↑</Link>
           </div>
         </footer>
       </main>
