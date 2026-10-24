@@ -38,6 +38,8 @@ Tên thư mục trong `app` tạo URL: `app/dich-vu/page.tsx` tương ứng `/di
 
 ## Thứ tự học và bài tập
 
+Để thực hành trên landing page hiện tại, làm lần lượt theo [Checklist cải tiến UI](./ui-improvement-checklist.md). Mỗi đợt có công việc, tiêu chí hoàn thành và kiến thức cần học.
+
 ### Bài 1 — JSX và component trang
 
 Trong `page.tsx`, nhận diện `Home`, các phần tử HTML, biểu thức `{...}`, mảng `services` và `.map()`. Đổi tên một dịch vụ và quan sát phần hiển thị. JSX trông giống HTML nhưng là cú pháp JavaScript/TypeScript để mô tả cây giao diện.
@@ -57,6 +59,16 @@ Trong App Router, page/layout là Server Component theo mặc định. Dùng m�
 ### Bài 5 — Form yêu cầu đặt lịch
 
 Giao diện form hiện nằm trong `src/components/booking-form.tsx` và là Client Component vì cần xử lý submit/trạng thái. Form có tên, điện thoại, thú cưng, combo, ngày mong muốn và lưu ý; các trường bắt buộc được kiểm tra trên trình duyệt. Trạng thái hiện tại chỉ báo rằng dữ liệu đã được kiểm tra — form chưa gửi/lưu dữ liệu. Bài tiếp theo là chọn Server Action hoặc Route Handler, kiểm tra dữ liệu ở server và lưu yêu cầu vào cơ sở dữ liệu.
+
+Sau đợt cải tiến UI 1–2, bạn có thể đọc mã theo thứ tự này để hiểu luồng chọn combo:
+
+1. `src/lib/services.ts`: dữ liệu và ID dùng chung cho card và form.
+2. `src/components/booking-provider.tsx`: `useState` lưu combo đang chọn; Context chia sẻ lựa chọn giữa các component.
+3. `src/components/booking-link.tsx`: khi bấm chọn, cập nhật combo và chuyển đến form; nút đặt lịch chung bắt đầu với lựa chọn trống.
+4. `src/components/booking-form.tsx`: `select` nhận `value` từ Context; tóm tắt giá và thời lượng cập nhật theo lựa chọn. Dữ liệu người dùng đã nhập vẫn được giữ khi đổi combo.
+5. `src/lib/booking-validation.ts`: kiểm tra số di động Việt Nam, chuẩn hóa số bắt đầu bằng `+84` và kiểm tra ngày hợp lệ từ hôm nay theo ngày tại trình duyệt.
+
+`page.tsx` vẫn là Server Component. `BookingProvider` nhận nội dung trang qua `children`, nên phần nội dung tĩnh không cần chuyển thành Client Component. Form thông báo rõ chế độ demo trước khi gửi; sửa dữ liệu sẽ xóa kết quả kiểm tra cũ.
 
 ### Bài 6 — Cơ sở dữ liệu và đăng nhập quản trị
 
