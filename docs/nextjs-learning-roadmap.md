@@ -23,15 +23,29 @@ Lệnh này tạo thiết lập mặc định gồm TypeScript, ESLint, Tailwind
 ## Bản đồ tệp hiện tại
 
 ```text
-src/app/
-  layout.tsx       # khung chung bắt buộc, html/body, metadata
-  page.tsx         # route trang chủ `/`, JSX và dữ liệu landing page
-  globals.css      # Tailwind v4, design tokens và CSS dùng toàn ứng dụng
-  components/ui/   # Button, Card: component shadcn/ui thuộc source project
-  lib/utils.ts     # hàm cn() ghép class Tailwind
+src/
+  app/
+    layout.tsx     # khung chung, html/body, font và metadata
+    page.tsx       # route trang chủ `/`, ghép các section
+    globals.css    # Tailwind v4, màu và CSS dùng toàn ứng dụng
+  components/
+    ui/            # Button, Card, Accordion thuộc source project
+    booking-*.tsx  # chia sẻ lựa chọn, nút chọn và form đặt lịch
+    care-journey.tsx
+    faq-section.tsx
+    contact-section.tsx
+    mobile-navigation.tsx
+    news-carousel.tsx
+  lib/
+    utils.ts       # hàm cn() ghép class Tailwind
+    services.ts    # dữ liệu combo dùng chung
+    site-config.ts # menu và thông tin cửa hàng minh họa
+    booking-validation.ts
 docs/
   business-requirements.md
   nextjs-learning-roadmap.md
+  ui-improvement-checklist.md
+  ui-review/       # báo cáo kiểm tra và ảnh trước/sau
 ```
 
 Tên thư mục trong `app` tạo URL: `app/dich-vu/page.tsx` tương ứng `/dich-vu`; `app/dich-vu/[slug]/page.tsx` tương ứng trang dịch vụ động.
@@ -84,6 +98,15 @@ Thêm trang lỗi/không tìm thấy, trạng thái đang tải, metadata theo t
 - Server Component là mặc định; `'use client'` tạo ranh giới chạy phía trình duyệt.
 - Giữ nghiệp vụ, kiểm tra quyền, bí mật và thao tác dữ liệu ở server.
 - Bắt đầu bằng một thay đổi nhỏ, giải thích được nó, rồi mới thêm thư viện hoặc lớp kiến trúc.
+
+## Thực hành tiếp sau đợt UI 3–5
+
+1. Đọc `care-journey.tsx`, `contact-section.tsx` và `faq-section.tsx` để thấy cách chia landing page thành các section dễ quản lý. Nội dung trang được ghép trong `page.tsx`.
+2. Đổi một thông tin minh họa trong `src/lib/site-config.ts` và quan sát cả phần liên hệ lẫn footer cập nhật từ cùng dữ liệu. Khi dùng dữ liệu thật, đổi cả `isDemo` và các URL.
+3. Đọc `mobile-navigation.tsx`: state mở/đóng, `aria-expanded`, điều hướng bằng bàn phím và dọn event listener trong `useEffect`.
+4. Đọc `news-carousel.tsx`: ref truy cập vùng cuộn, effect quản lý timer, `useSyncExternalStore` theo dõi cài đặt giảm chuyển động, và CSS scroll snap hỗ trợ vuốt ngang.
+5. Xem token màu và các lớp section trong `globals.css`; thay token để hiểu cách đồng bộ giao diện thay vì sửa màu ở từng card.
+6. Làm theo [báo cáo kiểm tra UI](./ui-review/README.md) để thử lại các luồng bằng trình duyệt và bàn phím.
 
 ## Nguồn chính thức
 

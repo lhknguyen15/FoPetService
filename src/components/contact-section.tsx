@@ -25,12 +25,9 @@ export function ContactSection() {
                 { icon: Clock3, label: "Giờ mở cửa", value: shopContact.hours },
                 { icon: Phone, label: "Điện thoại / Zalo", value: shopContact.phone },
               ].map(({ icon: Icon, label, value }) => (
-                <div key={label} className="flex items-start gap-3">
-                  <Icon aria-hidden="true" className="mt-1 size-5 shrink-0 text-primary" />
-                  <div className="min-w-0">
-                    <dt className="text-sm text-muted-foreground">{label}</dt>
-                    <dd className="mt-1 break-words font-semibold text-foreground">{value || "Đang cập nhật"}</dd>
-                  </div>
+                <div key={label}>
+                  <dt className="flex items-center gap-3 text-sm text-muted-foreground"><Icon aria-hidden="true" className="size-5 shrink-0 text-primary" />{label}</dt>
+                  <dd className="mt-1 break-words pl-8 font-semibold text-foreground">{value || "Đang cập nhật"}</dd>
                 </div>
               ))}
             </dl>

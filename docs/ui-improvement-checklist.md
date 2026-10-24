@@ -46,17 +46,17 @@ Phụ thuộc đợt 1. Các tệp chính: `src/app/page.tsx`, `src/components/b
 
 ## Đợt 3 — Nội dung giúp khách an tâm và liên hệ được
 
-Có thể chuẩn bị nội dung song song với đợt 2; thông tin thực tế cần chủ dự án cung cấp.
+Theo lựa chọn của chủ dự án, dùng dữ liệu ảo có nhãn minh họa cho bản thực hành. Cấu hình liên hệ được chuẩn bị để thay bằng thông tin thật sau này.
 
-- [ ] **UI-14:** Thêm khối “Vì sao chọn FoPet” với các cam kết cụ thể đã được xác nhận.
-- [ ] **UI-15:** Thêm quy trình ba bước: chọn dịch vụ → tư vấn, xác nhận → đưa bé đến chăm sóc.
-- [ ] **UI-16:** Chuẩn bị dữ liệu địa chỉ, giờ mở cửa, điện thoại, Zalo và bản đồ; ghi rõ phần còn thiếu.
-- [ ] **UI-17:** Tạo khối liên hệ riêng để mục “Liên hệ” dẫn đúng thông tin cửa hàng.
-- [ ] **UI-18:** Bổ sung liên kết gọi điện, Zalo và bản đồ khi đã có đích đến thật.
-- [ ] **UI-19:** Bổ sung FAQ ngắn về cách tính giá, chuẩn bị trước buổi spa và đổi lịch; câu trả lời cần khớp quy trình thực tế.
-- [ ] **UI-20:** Hoàn thiện footer với điều hướng và thông tin cửa hàng đã xác nhận.
+- [x] **UI-14:** Thêm khối “Vì sao chọn FoPet”, giới thiệu các lợi ích hiện có của giao diện và quy trình dự kiến có nhãn demo.
+- [x] **UI-15:** Thêm quy trình ba bước: chọn dịch vụ → tư vấn, xác nhận → đưa bé đến chăm sóc.
+- [x] **UI-16:** Chuẩn bị dữ liệu địa chỉ, giờ mở cửa, điện thoại, Zalo và bản đồ; ghi rõ phần còn thiếu.
+- [x] **UI-17:** Tạo khối liên hệ riêng để mục “Liên hệ” dẫn đúng thông tin cửa hàng.
+- [x] **UI-18:** Bổ sung liên kết gọi điện, Zalo và bản đồ khi đã có đích đến thật.
+- [x] **UI-19:** Bổ sung FAQ ngắn về cách tính giá, chuẩn bị trước buổi spa và đổi lịch; câu trả lời cần khớp quy trình thực tế.
+- [x] **UI-20:** Hoàn thiện footer với điều hướng và thông tin cửa hàng đồng bộ từ cấu hình, ghi rõ dữ liệu minh họa.
 
-**Hoàn thành khi:** khách tìm được cách liên hệ và hiểu quy trình xác nhận lịch; nội dung mẫu được nhận diện rõ. Chỉ bổ sung đánh giá, chứng nhận hoặc số liệu phục vụ khi có bằng chứng thật.
+**Hoàn thành khi:** khách tìm được mục liên hệ và hiểu quy trình xác nhận lịch; nội dung mẫu được nhận diện rõ. Với bản demo, gọi điện/Zalo được hiển thị ở trạng thái demo và bản đồ mở khu vực minh họa. Chỉ bổ sung đánh giá, chứng nhận hoặc số liệu phục vụ khi có bằng chứng thật.
 
 **Bài học:** component nội dung dùng lại, dữ liệu có cấu trúc và Accordion của shadcn/ui.
 
@@ -64,13 +64,13 @@ Có thể chuẩn bị nội dung song song với đợt 2; thông tin thực t�
 
 Phụ thuộc nội dung từ đợt 3.
 
-- [ ] **UI-21:** Sắp xếp trang theo thứ tự: header → hero → combo → lý do chọn/quy trình → đặt lịch → sản phẩm → tin tức → liên hệ/footer.
-- [ ] **UI-22:** Chuẩn hóa cấp chữ: nội dung chính khoảng 16px, thông tin phụ 12–14px; điều chỉnh tiêu đề theo màn hình và cân đối với ảnh.
-- [ ] **UI-23:** Gom màu đang viết trực tiếp trong JSX về token có ý nghĩa; kiểm tra tương phản của chữ và button.
-- [ ] **UI-24:** Cải thiện nav điện thoại để dễ đọc, dễ chạm; dùng menu thu gọn nếu bốn mục quá chật.
-- [ ] **UI-25:** Căn khoảng cuộn tới các section để sticky header không che tiêu đề hoặc đầu form.
-- [ ] **UI-26:** Bổ sung nút dừng/chạy và trước/sau cho tin tức; hỗ trợ vuốt trên điện thoại và giữ chế độ giảm chuyển động.
-- [ ] **UI-27:** Làm rõ trạng thái “sắp ra mắt” của danh mục sản phẩm; khách cần hiểu vì sao nút xem thêm chưa hoạt động.
+- [x] **UI-21:** Sắp xếp trang theo thứ tự: header → hero → combo → lý do chọn/quy trình → đặt lịch → sản phẩm → tin tức → liên hệ/footer.
+- [x] **UI-22:** Chuẩn hóa cấp chữ: nội dung chính khoảng 16px, thông tin phụ 12–14px; điều chỉnh tiêu đề theo màn hình và cân đối với ảnh.
+- [x] **UI-23:** Gom màu đang viết trực tiếp trong JSX về token có ý nghĩa; kiểm tra tương phản của chữ và button.
+- [x] **UI-24:** Cải thiện nav điện thoại để dễ đọc, dễ chạm; dùng menu thu gọn nếu bốn mục quá chật.
+- [x] **UI-25:** Căn khoảng cuộn tới các section để sticky header không che tiêu đề hoặc đầu form.
+- [x] **UI-26:** Bổ sung nút dừng/chạy và trước/sau cho tin tức; hỗ trợ vuốt trên điện thoại và giữ chế độ giảm chuyển động.
+- [x] **UI-27:** Làm rõ trạng thái “sắp ra mắt” của danh mục sản phẩm; khách cần hiểu vì sao nút xem thêm chưa hoạt động.
 
 **Hoàn thành khi:** trang đọc và thao tác được trên điện thoại; thứ tự nội dung dẫn khách đến form sớm hơn; tin tức có thể được dừng bằng điều khiển trực tiếp.
 
@@ -80,14 +80,14 @@ Phụ thuộc nội dung từ đợt 3.
 
 Thực hiện sau mỗi đợt với phạm vi vừa thay đổi; rà soát toàn trang khi hoàn tất.
 
-- [ ] **UI-28:** Kiểm tra ở chiều rộng 360px, 390px, 768px, 1280px và 1440px: không tràn ngang, không cắt nội dung.
-- [ ] **UI-29:** Kiểm tra nav, nút chọn từng combo, thay đổi dịch vụ trong form và gửi form demo.
-- [ ] **UI-30:** Kiểm tra bằng bàn phím: thứ tự Tab, focus, select, carousel và menu điện thoại nếu có.
-- [ ] **UI-31:** Kiểm tra lỗi form, ngày không hợp lệ và nội dung thông báo kết quả.
-- [ ] **UI-32:** Kiểm tra trang khi bật giảm chuyển động và phóng to trình duyệt 200%.
-- [ ] **UI-33:** Chạy `npm run lint` và `npm run build`; xử lý lỗi phát sinh trong phạm vi thay đổi.
-- [ ] **UI-34:** Chụp giao diện trước/sau ở cùng kích thước màn hình để so sánh.
-- [ ] **UI-35:** Ghi lại thay đổi và tạo commit theo từng đợt trên `KhoaNguyen`.
+- [x] **UI-28:** Kiểm tra ở chiều rộng 360px, 390px, 768px, 1280px và 1440px: không tràn ngang, không cắt nội dung.
+- [x] **UI-29:** Kiểm tra nav, nút chọn từng combo, thay đổi dịch vụ trong form và gửi form demo.
+- [x] **UI-30:** Kiểm tra bằng bàn phím: thứ tự Tab, focus, select, carousel và menu điện thoại nếu có.
+- [x] **UI-31:** Kiểm tra lỗi form, ngày không hợp lệ và nội dung thông báo kết quả.
+- [x] **UI-32:** Kiểm tra trang khi bật giảm chuyển động và phóng to trình duyệt 200%.
+- [x] **UI-33:** Chạy `npm run lint` và `npm run build`; xử lý lỗi phát sinh trong phạm vi thay đổi.
+- [x] **UI-34:** Chụp giao diện trước/sau ở cùng kích thước màn hình để so sánh.
+- [x] **UI-35:** Ghi lại thay đổi và tạo commit theo từng đợt trên `KhoaNguyen`.
 
 **Hoàn thành khi:** các luồng chính hoạt động đúng, kiểm tra giao diện đạt yêu cầu và không còn lỗi lint/build liên quan đến thay đổi.
 
@@ -106,11 +106,21 @@ Các mục này thuộc giai đoạn tiếp theo, không phải điều kiện h
 - Card dịch vụ dùng vùng icon 80px, card sản phẩm dùng vùng icon cao 144px; button lớn dùng chung chiều cao 48px.
 - Dữ liệu combo nằm trong `src/lib/services.ts`; `BookingProvider` chia sẻ lựa chọn giữa `BookingLink` và `BookingForm`. Trang chủ tiếp tục là Server Component.
 - Đã kiểm tra các hàm ngày/số điện thoại và 13 tình huống tương tác trong môi trường DOM, gồm chọn cả ba combo, đổi lựa chọn, giữ thông tin đã nhập, lỗi form và trạng thái demo. Đây là kiểm tra component, chưa thay cho quan sát bố cục hoặc thao tác bàn phím trong trình duyệt thật.
-- Lint và build production đã thành công. Việc kiểm tra trực quan ở nhiều kích thước màn hình vẫn thuộc đợt 5.
+- Lint và build production đã thành công. Kiểm tra trình duyệt và ảnh trước/sau đã được bổ sung ở đợt 5.
+
+## Ghi nhận triển khai đợt 3–5
+
+- Hoàn thiện lý do chọn FoPet, quy trình, FAQ, liên hệ và footer; dùng dữ liệu ảo theo lựa chọn của chủ dự án.
+- Bố cục, màu, chữ, menu điện thoại và carousel đã được cập nhật. Form nằm trước sản phẩm/tin tức.
+- Đã đạt 21 nhóm kiểm tra trên Chrome với bản production, gồm năm chiều rộng màn hình, bàn phím, vuốt chạm, đặt lịch, carousel và giảm chuyển động.
+- Kiểm tra reflow tương đương 200% bằng viewport 720×450/DPR 2 trên màn hình 1440×900; không tràn ngang. Đây là mô phỏng reflow, không thao tác thanh zoom trình duyệt.
+- Lint/build thành công, quét accessibility tự động không ghi nhận violation/mục cần rà soát thêm; bảy cặp màu được đo đều trên 4.5:1.
+- Đã lưu ảnh trước/sau, kết quả kiểm tra và commit theo từng đợt trên nhánh `KhoaNguyen`.
+- Xem [báo cáo kiểm tra và ảnh](./ui-review/README.md) để biết phạm vi và giới hạn kiểm tra.
 
 ## Nguồn tham khảo
 
-Khảo sát nội dung và cách tổ chức thông tin ngày 25/10/2026. Việc xem trực quan qua Computer Use bị dừng do công cụ không xác định được URL Chrome; cần bổ sung quan sát desktop/mobile khi công cụ hoạt động trở lại. Chưa có dữ liệu đo tỷ lệ chuyển đổi để khẳng định hiệu quả của các đề xuất.
+Khảo sát trang tham khảo ngày 25/10/2026 dựa trên nội dung và cách tổ chức thông tin. Đợt 5 đã bổ sung kiểm tra giao diện FoPet bằng Chrome headless và xem ảnh desktop/mobile. Chưa có dữ liệu đo tỷ lệ chuyển đổi để khẳng định hiệu quả của các đề xuất.
 
 - [Pet Mart](https://www.petmart.vn/): phân nhóm sản phẩm, dịch vụ và thông tin cửa hàng.
 - [Groomit](https://www.groomit.me/): đặt lịch theo nhu cầu thú cưng và thông tin phục vụ lựa chọn.

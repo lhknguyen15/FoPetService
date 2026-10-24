@@ -16,7 +16,7 @@ export function FaqSection() {
           <h2 id="faq-title" className="section-title">Một vài điều <span className="text-primary">bạn muốn biết.</span></h2>
           <p className="mt-4 leading-7 text-muted-foreground">Tìm hiểu trước một chút để buổi hẹn của bé nhẹ nhàng hơn.</p>
         </div>
-        <Accordion aria-label="Câu hỏi thường gặp" className="min-w-0 rounded-3xl border border-border bg-background px-5 sm:px-7">
+        <Accordion role="group" aria-label="Câu hỏi thường gặp" className="min-w-0 rounded-3xl border border-border bg-background px-5 sm:px-7">
           {questions.map((item) => (
             <AccordionItem key={item.id} value={item.id}>
               <AccordionTrigger>{item.question}</AccordionTrigger>
