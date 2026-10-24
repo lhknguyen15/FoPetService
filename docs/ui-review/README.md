@@ -2,6 +2,8 @@
 
 Ngày kiểm tra: 25/10/2026. Nhánh: `KhoaNguyen`.
 
+Sau đợt này, giao diện đã được chỉnh tiếp theo phản hồi: đồng bộ lề hero, chuyển quy trình sang modal và sửa kiểu chữ FoPet. Xem [bản cập nhật và ảnh mới](./layout-modal-update/README.md). Các kết quả bên dưới ghi nhận phiên bản trước bản cập nhật đó.
+
 ## Nội dung đã triển khai
 
 - Thêm lý do chọn FoPet, quy trình ba bước và FAQ dạng Accordion.

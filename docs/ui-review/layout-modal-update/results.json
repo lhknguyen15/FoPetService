@@ -1,0 +1,89 @@
+{
+  "browser": "155.0.8059.85",
+  "results": [
+    {
+      "name": "aligned gutters, brand typography, compact layout 360px",
+      "width": 360,
+      "leftDifference": 0,
+      "rightDifference": 0,
+      "scrollWidth": 360,
+      "bodyFont": "\"Nunito Sans\", \"Nunito Sans Fallback\"",
+      "brandFont": "\"Nunito Sans\", \"Nunito Sans Fallback\"",
+      "brandWeight": "800",
+      "brandTransform": "none",
+      "brandTracking": "normal"
+    },
+    {
+      "name": "modal: Enter, three steps, focus trap, Escape and restored focus 360px"
+    },
+    {
+      "name": "aligned gutters, brand typography, compact layout 390px",
+      "width": 390,
+      "leftDifference": 0,
+      "rightDifference": 0,
+      "scrollWidth": 390,
+      "bodyFont": "\"Nunito Sans\", \"Nunito Sans Fallback\"",
+      "brandFont": "\"Nunito Sans\", \"Nunito Sans Fallback\"",
+      "brandWeight": "800",
+      "brandTransform": "none",
+      "brandTracking": "normal"
+    },
+    {
+      "name": "modal: Enter, three steps, focus trap, Escape and restored focus 390px"
+    },
+    {
+      "name": "aligned gutters, brand typography, compact layout 768px",
+      "width": 768,
+      "leftDifference": 0,
+      "rightDifference": 0,
+      "scrollWidth": 768,
+      "bodyFont": "\"Nunito Sans\", \"Nunito Sans Fallback\"",
+      "brandFont": "\"Nunito Sans\", \"Nunito Sans Fallback\"",
+      "brandWeight": "800",
+      "brandTransform": "none",
+      "brandTracking": "normal"
+    },
+    {
+      "name": "modal: Enter, three steps, focus trap, Escape and restored focus 768px"
+    },
+    {
+      "name": "aligned gutters, brand typography, compact layout 1280px",
+      "width": 1280,
+      "leftDifference": 0,
+      "rightDifference": 0,
+      "scrollWidth": 1280,
+      "bodyFont": "\"Nunito Sans\", \"Nunito Sans Fallback\"",
+      "brandFont": "\"Nunito Sans\", \"Nunito Sans Fallback\"",
+      "brandWeight": "800",
+      "brandTransform": "none",
+      "brandTracking": "normal"
+    },
+    {
+      "name": "modal: Enter, three steps, focus trap, Escape and restored focus 1280px"
+    },
+    {
+      "name": "aligned gutters, brand typography, compact layout 1440px",
+      "width": 1440,
+      "leftDifference": 0,
+      "rightDifference": 0,
+      "scrollWidth": 1440,
+      "bodyFont": "\"Nunito Sans\", \"Nunito Sans Fallback\"",
+      "brandFont": "\"Nunito Sans\", \"Nunito Sans Fallback\"",
+      "brandWeight": "800",
+      "brandTransform": "none",
+      "brandTracking": "normal"
+    },
+    {
+      "name": "modal: Enter, three steps, focus trap, Escape and restored focus 1440px"
+    },
+    {
+      "name": "modal buttons/backdrop, preserved form values and accessibility scan of dialog content",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "name": "no browser runtime or console errors"
+    }
+  ],
+  "errors": []
+}

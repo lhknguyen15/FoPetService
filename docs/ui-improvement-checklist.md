@@ -48,8 +48,8 @@ Phụ thuộc đợt 1. Các tệp chính: `src/app/page.tsx`, `src/components/b
 
 Theo lựa chọn của chủ dự án, dùng dữ liệu ảo có nhãn minh họa cho bản thực hành. Cấu hình liên hệ được chuẩn bị để thay bằng thông tin thật sau này.
 
-- [x] **UI-14:** Thêm khối “Vì sao chọn FoPet”, giới thiệu các lợi ích hiện có của giao diện và quy trình dự kiến có nhãn demo.
-- [x] **UI-15:** Thêm quy trình ba bước: chọn dịch vụ → tư vấn, xác nhận → đưa bé đến chăm sóc.
+- [x] **UI-14:** Theo phản hồi mới, bỏ section “Vì sao chọn FoPet” để trang gọn hơn.
+- [x] **UI-15:** Hiển thị quy trình ba bước trong modal “Xem quy trình” tại phần đặt lịch: chọn dịch vụ → tư vấn, xác nhận → đưa bé đến chăm sóc.
 - [x] **UI-16:** Chuẩn bị dữ liệu địa chỉ, giờ mở cửa, điện thoại, Zalo và bản đồ; ghi rõ phần còn thiếu.
 - [x] **UI-17:** Tạo khối liên hệ riêng để mục “Liên hệ” dẫn đúng thông tin cửa hàng.
 - [x] **UI-18:** Bổ sung liên kết gọi điện, Zalo và bản đồ khi đã có đích đến thật.
@@ -64,7 +64,7 @@ Theo lựa chọn của chủ dự án, dùng dữ liệu ảo có nhãn minh h�
 
 Phụ thuộc nội dung từ đợt 3.
 
-- [x] **UI-21:** Sắp xếp trang theo thứ tự: header → hero → combo → lý do chọn/quy trình → đặt lịch → sản phẩm → tin tức → liên hệ/footer.
+- [x] **UI-21:** Sắp xếp trang theo thứ tự: header → hero → combo → đặt lịch (có modal quy trình) → sản phẩm → tin tức → FAQ → liên hệ/footer.
 - [x] **UI-22:** Chuẩn hóa cấp chữ: nội dung chính khoảng 16px, thông tin phụ 12–14px; điều chỉnh tiêu đề theo màn hình và cân đối với ảnh.
 - [x] **UI-23:** Gom màu đang viết trực tiếp trong JSX về token có ý nghĩa; kiểm tra tương phản của chữ và button.
 - [x] **UI-24:** Cải thiện nav điện thoại để dễ đọc, dễ chạm; dùng menu thu gọn nếu bốn mục quá chật.
@@ -117,6 +117,13 @@ Các mục này thuộc giai đoạn tiếp theo, không phải điều kiện h
 - Lint/build thành công, quét accessibility tự động không ghi nhận violation/mục cần rà soát thêm; bảy cặp màu được đo đều trên 4.5:1.
 - Đã lưu ảnh trước/sau, kết quả kiểm tra và commit theo từng đợt trên nhánh `KhoaNguyen`.
 - Xem [báo cáo kiểm tra và ảnh](./ui-review/README.md) để biết phạm vi và giới hạn kiểm tra.
+
+## Cập nhật theo phản hồi giao diện
+
+- Hero dùng chung `page-container` với các section khác, khung tối đa 1280px và cùng khoảng đệm hai bên.
+- Thay section lý do/quy trình bằng một modal mở từ phần đặt lịch.
+- Chữ thương hiệu FoPet dùng Nunito Sans đậm, giữ đúng hoa/thường và bỏ giãn chữ ở tên thương hiệu.
+- Lint/build đạt; kiểm tra lề và modal trên năm kích thước màn hình đã đạt. Xem [ảnh và kết quả cập nhật](./ui-review/layout-modal-update/README.md).
 
 ## Nguồn tham khảo
 

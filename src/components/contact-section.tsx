@@ -11,7 +11,7 @@ export function ContactSection() {
       <div className="page-container">
         <div className="grid gap-8 rounded-[2rem] bg-secondary/70 p-5 sm:p-8 lg:grid-cols-[.9fr_1.1fr] lg:gap-12 lg:p-10">
           <div>
-            <p className="section-eyebrow">GHÉ CHƠI CÙNG FoPet</p>
+            <p className="section-eyebrow">GHÉ CHƠI CÙNG <span className="brand-name">FoPet</span></p>
             <h2 id="contact-title" className="section-title">Một góc nhỏ, <span className="text-primary">thật nhiều yêu thương.</span></h2>
             <p className="mt-4 leading-7 text-muted-foreground">Bạn có thể tìm thông tin cửa hàng và cách kết nối với FoPet tại đây.</p>
             {shopContact.isDemo && <p className="mt-4 text-sm leading-6 text-muted-foreground">Địa chỉ, giờ mở cửa và số liên hệ là dữ liệu minh họa cho dự án cá nhân. Các nút gọi và Zalo đang ở chế độ demo.</p>}

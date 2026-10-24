@@ -31,7 +31,7 @@ src/
   components/
     ui/            # Button, Card, Accordion thuộc source project
     booking-*.tsx  # chia sẻ lựa chọn, nút chọn và form đặt lịch
-    care-journey.tsx
+    care-journey-dialog.tsx
     faq-section.tsx
     contact-section.tsx
     mobile-navigation.tsx
@@ -101,7 +101,7 @@ Thêm trang lỗi/không tìm thấy, trạng thái đang tải, metadata theo t
 
 ## Thực hành tiếp sau đợt UI 3–5
 
-1. Đọc `care-journey.tsx`, `contact-section.tsx` và `faq-section.tsx` để thấy cách chia landing page thành các section dễ quản lý. Nội dung trang được ghép trong `page.tsx`.
+1. Đọc `contact-section.tsx` và `faq-section.tsx` để thấy cách chia landing page thành các section dễ quản lý. `care-journey-dialog.tsx` là Client Component mở quy trình trong modal từ phần đặt lịch; nội dung trang được ghép trong `page.tsx`.
 2. Đổi một thông tin minh họa trong `src/lib/site-config.ts` và quan sát cả phần liên hệ lẫn footer cập nhật từ cùng dữ liệu. Khi dùng dữ liệu thật, đổi cả `isDemo` và các URL.
 3. Đọc `mobile-navigation.tsx`: state mở/đóng, `aria-expanded`, điều hướng bằng bàn phím và dọn event listener trong `useEffect`.
 4. Đọc `news-carousel.tsx`: ref truy cập vùng cuộn, effect quản lý timer, `useSyncExternalStore` theo dõi cài đặt giảm chuyển động, và CSS scroll snap hỗ trợ vuốt ngang.

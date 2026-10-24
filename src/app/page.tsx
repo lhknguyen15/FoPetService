@@ -20,7 +20,7 @@ import { BookingForm } from "@/components/booking-form";
 import { BookingLink } from "@/components/booking-link";
 import { BookingProvider } from "@/components/booking-provider";
 import { servicePackages, type ServiceId } from "@/lib/services";
-import { CareJourney } from "@/components/care-journey";
+import { CareJourneyDialog } from "@/components/care-journey-dialog";
 import { FaqSection } from "@/components/faq-section";
 import { ContactSection } from "@/components/contact-section";
 import { navigationLinks, shopContact } from "@/lib/site-config";
@@ -108,11 +108,11 @@ export default function Home() {
           </div>
         </header>
 
-        <section id="main-content" className="mx-auto grid max-w-[1440px] items-center gap-8 px-5 pb-14 pt-10 sm:px-8 sm:pb-16 sm:pt-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-14 lg:py-16">
+        <section id="main-content" className="page-container grid items-center gap-8 pb-14 pt-10 sm:pb-16 sm:pt-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-14 lg:py-16">
           <div className="max-w-2xl">
             <p className="mb-5 inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-xs font-extrabold tracking-[0.12em] text-primary">
               <Sparkles aria-hidden="true" className="size-3.5" />
-              XIN CHÀO, FoPet ĐÂY!
+              XIN CHÀO, <span className="brand-name">FoPet</span> ĐÂY!
             </p>
             <h1 className="max-w-[590px] font-heading text-[clamp(2.1rem,3.6vw,3.25rem)] font-normal leading-[1.08] tracking-[-0.05em] text-foreground">
               Chăm bé khỏe vui,<br />
@@ -207,14 +207,13 @@ export default function Home() {
           </div>
         </section>
 
-        <CareJourney />
-
         <section id="dat-lich" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24">
           <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:gap-16">
             <div className="max-w-lg">
               <p className="section-eyebrow">ĐẶT LỊCH CHO BÉ</p>
-              <h2 className="section-title">Hẹn FoPet <span className="text-primary">một ngày vui.</span></h2>
+              <h2 className="section-title">Hẹn <span className="brand-name">FoPet</span> <span className="text-primary">một ngày vui.</span></h2>
               <p className="mt-4 text-sm leading-7 text-muted-foreground">Thử chọn combo và điền thông tin của bạn cùng bé. Quy trình dự kiến sẽ có bước tư vấn và xác nhận thời gian trước buổi hẹn.</p>
+              <CareJourneyDialog />
               <div className="mt-6 flex items-start gap-3 rounded-2xl bg-secondary p-4 text-sm leading-6 text-secondary-foreground">
                 <PawPrint aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-primary" />
                 <p>Gửi yêu cầu chưa đồng nghĩa với việc lịch đã được giữ chỗ. Lịch chỉ được xác nhận sau khi FoPet liên hệ với bạn.</p>
@@ -228,7 +227,7 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-5 sm:px-8">
             <div className="mb-9 flex flex-col justify-between gap-4 sm:mb-12 sm:flex-row sm:items-end">
               <div>
-                <p className="section-eyebrow">GÓC ĐỒ DÙNG FoPet</p>
+                <p className="section-eyebrow">GÓC ĐỒ DÙNG <span className="brand-name">FoPet</span></p>
                 <h2 className="section-title">Chọn món quà <span className="text-primary">cho bé.</span></h2>
               </div>
               <p className="max-w-md text-sm leading-7 text-muted-foreground sm:text-right">Một vài sản phẩm gợi ý cho bữa ăn, giờ chơi và chăm sóc hằng ngày.</p>
@@ -274,7 +273,7 @@ export default function Home() {
           <div className="page-container">
             <div className="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
               <div>
-                <p className="section-eyebrow">CÂU CHUYỆN FoPet</p>
+                <p className="section-eyebrow">CÂU CHUYỆN <span className="brand-name">FoPet</span></p>
                 <h2 className="section-title">Tin vui và mẹo <span className="text-primary">chăm bé.</span></h2>
               </div>
               <p className="max-w-md text-sm leading-7 text-muted-foreground sm:text-right">Một vài bài viết minh họa để bạn khám phá thêm về thế giới thú cưng.</p>
@@ -291,7 +290,7 @@ export default function Home() {
             <div>
               <Link href="#top" className="inline-flex items-center gap-3 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring" aria-label="FoPet Service, lên đầu trang">
                 <Image src="/images/fopet-logo-transparent.png" alt="Logo FoPet Service" width={1024} height={1024} className="size-16 object-cover" />
-                <span className="font-heading text-xl text-foreground">FoPet Service</span>
+                <span className="brand-name text-xl text-foreground">FoPet Service</span>
               </Link>
               <p className="mt-3 max-w-xs text-sm leading-6 text-muted-foreground">Chăm bé bằng cả sự dịu dàng. Một nơi để sen khám phá dịch vụ và đồ dùng dành cho những người bạn bốn chân.</p>
             </div>
