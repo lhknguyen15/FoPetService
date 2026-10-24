@@ -1,0 +1,208 @@
+{
+  "browser": "155.0.8059.85",
+  "results": [
+    {
+      "name": "responsive layout 360px",
+      "status": "pass",
+      "viewport": 360,
+      "width": 360,
+      "clipped": [],
+      "sections": [
+        "main-content",
+        "dich-vu",
+        "quy-trinh",
+        "dat-lich",
+        "san-pham",
+        "tin-tuc",
+        "cau-hoi",
+        "lien-he"
+      ]
+    },
+    {
+      "name": "responsive layout 390px",
+      "status": "pass",
+      "viewport": 390,
+      "width": 390,
+      "clipped": [],
+      "sections": [
+        "main-content",
+        "dich-vu",
+        "quy-trinh",
+        "dat-lich",
+        "san-pham",
+        "tin-tuc",
+        "cau-hoi",
+        "lien-he"
+      ]
+    },
+    {
+      "name": "mobile menu: Enter/Space, Tab, Escape, close on link and contact anchor",
+      "status": "pass"
+    },
+    {
+      "name": "mobile horizontal touch swipe changes news position",
+      "status": "pass"
+    },
+    {
+      "name": "responsive layout 768px",
+      "status": "pass",
+      "viewport": 768,
+      "width": 768,
+      "clipped": [],
+      "sections": [
+        "main-content",
+        "dich-vu",
+        "quy-trinh",
+        "dat-lich",
+        "san-pham",
+        "tin-tuc",
+        "cau-hoi",
+        "lien-he"
+      ]
+    },
+    {
+      "name": "responsive layout 1280px",
+      "status": "pass",
+      "viewport": 1280,
+      "width": 1280,
+      "clipped": [],
+      "sections": [
+        "main-content",
+        "dich-vu",
+        "quy-trinh",
+        "dat-lich",
+        "san-pham",
+        "tin-tuc",
+        "cau-hoi",
+        "lien-he"
+      ]
+    },
+    {
+      "name": "responsive layout 1440px",
+      "status": "pass",
+      "viewport": 1440,
+      "width": 1440,
+      "clipped": [],
+      "sections": [
+        "main-content",
+        "dich-vu",
+        "quy-trinh",
+        "dat-lich",
+        "san-pham",
+        "tin-tuc",
+        "cau-hoi",
+        "lien-he"
+      ]
+    },
+    {
+      "name": "all desktop navigation anchors clear sticky header",
+      "status": "pass"
+    },
+    {
+      "name": "all three combos: keyboard selection, correct price and form focus",
+      "status": "pass"
+    },
+    {
+      "name": "required fields: six errors and first error focus",
+      "status": "pass"
+    },
+    {
+      "name": "invalid phone and past date are rejected",
+      "status": "pass"
+    },
+    {
+      "name": "valid demo, summary update, stale result removal and preserved inputs",
+      "status": "pass"
+    },
+    {
+      "name": "native service select changes with keyboard and Tab reaches date",
+      "status": "pass"
+    },
+    {
+      "name": "FAQ expands and collapses with keyboard",
+      "status": "pass"
+    },
+    {
+      "name": "carousel previous/next, Home/End/arrows and reduced-motion mode",
+      "status": "pass"
+    },
+    {
+      "name": "demo contact is labeled and cannot call or message a sample number",
+      "status": "pass"
+    },
+    {
+      "name": "automated accessibility scan",
+      "status": "pass",
+      "violations": [],
+      "incomplete": [],
+      "passes": 30
+    },
+    {
+      "name": "seven text and button color pairs meet 4.5:1 contrast",
+      "status": "pass",
+      "pairs": [
+        {
+          "foreground": "foreground",
+          "background": "background",
+          "ratio": 11.53
+        },
+        {
+          "foreground": "muted-foreground",
+          "background": "background",
+          "ratio": 5.53
+        },
+        {
+          "foreground": "muted-foreground",
+          "background": "secondary",
+          "ratio": 4.81
+        },
+        {
+          "foreground": "primary",
+          "background": "secondary",
+          "ratio": 4.85
+        },
+        {
+          "foreground": "primary-foreground",
+          "background": "primary",
+          "ratio": 5.57
+        },
+        {
+          "foreground": "primary-foreground",
+          "background": "primary-hover",
+          "ratio": 7.26
+        },
+        {
+          "foreground": "destructive",
+          "background": "card",
+          "ratio": 7.15
+        }
+      ]
+    },
+    {
+      "name": "200% reflow equivalent: 1440x900 display, 720x450 CSS viewport, DPR 2",
+      "status": "pass",
+      "viewport": 720,
+      "width": 720,
+      "clipped": [],
+      "sections": [
+        "main-content",
+        "dich-vu",
+        "quy-trinh",
+        "dat-lich",
+        "san-pham",
+        "tin-tuc",
+        "cau-hoi",
+        "lien-he"
+      ]
+    },
+    {
+      "name": "autoplay advances and wraps, pause/play, hover/focus pauses, live reduced-motion stops",
+      "status": "pass"
+    },
+    {
+      "name": "no browser runtime, hydration or console errors",
+      "status": "pass"
+    }
+  ],
+  "browserErrors": []
+}
