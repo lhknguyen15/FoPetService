@@ -15,11 +15,11 @@ import {
 } from "@/lib/booking-validation";
 
 const fieldClassName =
-  "h-12 w-full rounded-2xl border border-[#e9dec8] bg-white px-4 text-sm text-[#5a3c20] outline-none transition focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 placeholder:text-[#a99a7b] aria-invalid:border-destructive";
+  "h-12 w-full rounded-2xl border border-border bg-card px-4 text-base text-foreground outline-none transition focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 placeholder:text-muted-foreground aria-invalid:border-destructive";
 
 function FieldLabel({ htmlFor, children }: { htmlFor: string; children: ReactNode }) {
   return (
-    <label htmlFor={htmlFor} className="mb-2 block text-sm font-semibold text-[#705a35]">
+    <label htmlFor={htmlFor} className="mb-2 block text-sm font-semibold text-secondary-foreground">
       {children}
     </label>
   );
@@ -87,15 +87,15 @@ export function BookingForm() {
       onChange={handleChange}
       aria-labelledby="booking-form-title"
       aria-describedby="booking-demo-note"
-      className="min-w-0 rounded-[1.75rem] border border-[#e9dec8] bg-[#fbf7ed] p-5 sm:p-8"
+      className="min-w-0 rounded-[1.75rem] border border-border bg-card p-5 sm:p-8"
     >
       <div className="mb-6 flex items-center gap-3">
         <span className="grid size-11 place-items-center rounded-full bg-secondary text-primary">
           <PawPrint aria-hidden="true" className="size-5" />
         </span>
         <div>
-          <h3 id="booking-form-title" tabIndex={-1} className="rounded-sm font-heading text-xl font-bold text-[#5a3c20] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">Thông tin đặt lịch</h3>
-          <p className="mt-0.5 text-xs text-[#827052]">Các mục có dấu * là bắt buộc.</p>
+          <h3 id="booking-form-title" tabIndex={-1} className="rounded-sm font-heading text-xl font-bold text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">Thông tin đặt lịch</h3>
+          <p className="mt-0.5 text-xs text-muted-foreground">Các mục có dấu * là bắt buộc.</p>
         </div>
       </div>
 
@@ -106,15 +106,15 @@ export function BookingForm() {
       <div aria-live="polite" aria-atomic="true" className="mb-6">
         {selectedService ? (
           <div className="rounded-2xl border border-primary/20 bg-background p-4">
-            <p className="text-xs font-semibold text-[#887451]">Combo bạn đang chọn</p>
+            <p className="text-xs font-semibold text-muted-foreground">Combo bạn đang chọn</p>
             <div className="mt-2 flex flex-wrap items-baseline justify-between gap-2">
-              <p className="font-bold text-[#5a3c20]">{selectedService.name}</p>
+              <p className="font-bold text-foreground">{selectedService.name}</p>
               <p className="text-sm font-bold text-primary">Từ {selectedService.price}</p>
             </div>
-            <p className="mt-2 text-xs leading-5 text-[#827052]">{selectedService.detail}. Giá mẫu, sẽ được tư vấn trước khi xác nhận.</p>
+            <p className="mt-2 text-xs leading-5 text-muted-foreground">{selectedService.detail}. Giá mẫu, sẽ được tư vấn trước khi xác nhận.</p>
           </div>
         ) : (
-          <p className="text-sm leading-6 text-[#75654e]">Chọn combo bên dưới hoặc từ danh sách dịch vụ. Bạn có thể đổi lựa chọn trước khi gửi.</p>
+          <p className="text-sm leading-6 text-muted-foreground">Chọn combo bên dưới hoặc từ danh sách dịch vụ. Bạn có thể đổi lựa chọn trước khi gửi.</p>
         )}
       </div>
 
@@ -199,11 +199,11 @@ export function BookingForm() {
         <Button type="submit" size="lg" className="w-full sm:w-auto">
           Thử gửi yêu cầu <ArrowRight aria-hidden="true" className="size-4" />
         </Button>
-        <p className="text-xs leading-5 text-[#827153]">Lịch hẹn thực tế cần FoPet xác nhận.</p>
+        <p className="text-xs leading-5 text-muted-foreground">Lịch hẹn thực tế cần FoPet xác nhận.</p>
       </div>
 
       {demoSubmitted && (
-        <p role="status" aria-live="polite" className="mt-5 flex items-start gap-2 rounded-2xl bg-secondary p-4 text-sm leading-6 text-[#70552c]">
+        <p role="status" aria-live="polite" className="mt-5 flex items-start gap-2 rounded-2xl bg-secondary p-4 text-sm leading-6 text-secondary-foreground">
           <Check aria-hidden="true" className="mt-1 size-4 shrink-0" />
           Thông tin cho {selectedService?.name} đã hợp lệ trên trình duyệt. Đây là bản dùng thử: chưa gửi yêu cầu, lưu thông tin hoặc tạo lịch hẹn.
         </p>

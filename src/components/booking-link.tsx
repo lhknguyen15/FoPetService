@@ -25,13 +25,14 @@ export function BookingLink({
   function handleClick(event: MouseEvent<HTMLElement>) {
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
     selectService(serviceId ?? "");
-    // Giữ điều hướng anchor gốc và chuyển focus để tiếp tục bằng bàn phím.
-    document.getElementById("booking-form-title")?.focus({ preventScroll: true });
+    // Đợi anchor hoàn tất điều hướng rồi chuyển focus, tránh trình duyệt lấy lại focus.
+    requestAnimationFrame(() => document.getElementById("booking-form-title")?.focus({ preventScroll: true }));
   }
 
   return (
     <Button
       nativeButton={false}
+      role="link"
       render={<a href="#dat-lich" />}
       onClick={handleClick}
       variant={variant}

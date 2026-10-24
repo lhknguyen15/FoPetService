@@ -7,7 +7,6 @@ import {
   Bone,
   Brush,
   Check,
-  Heart,
   House,
   PawPrint,
   Scissors,
@@ -25,6 +24,8 @@ import { CareJourney } from "@/components/care-journey";
 import { FaqSection } from "@/components/faq-section";
 import { ContactSection } from "@/components/contact-section";
 import { navigationLinks, shopContact } from "@/lib/site-config";
+import { MobileNavigation } from "@/components/mobile-navigation";
+import { NewsCarousel } from "@/components/news-carousel";
 
 const serviceIcons: Record<ServiceId, typeof Bath> = {
   bath: Bath,
@@ -67,37 +68,10 @@ const products = [
   },
 ];
 
-const newsItems = [
-  {
-    category: "Chăm sóc",
-    title: "Chuẩn bị gì trước buổi spa đầu tiên của bé?",
-    description: "Một vài bước nhỏ giúp bé làm quen với việc tắm và chăm sóc lông.",
-    icon: Bath,
-  },
-  {
-    category: "Góc của mèo",
-    title: "Chọn đồ chơi giúp mèo vận động mỗi ngày",
-    description: "Gợi ý hoạt động vui chơi phù hợp với tính cách của từng bé mèo.",
-    icon: Sparkles,
-  },
-  {
-    category: "Mẹo hay",
-    title: "Chải lông đúng cách để bộ lông luôn khỏe",
-    description: "Chọn lược và tần suất chải phù hợp với độ dài lông của thú cưng.",
-    icon: Scissors,
-  },
-  {
-    category: "Sức khỏe",
-    title: "Đưa bé đi khám định kỳ nhẹ nhàng hơn",
-    description: "Những món đồ quen thuộc có thể giúp bé an tâm khi ra ngoài.",
-    icon: Heart,
-  },
-];
-
 export default function Home() {
   return (
     <BookingProvider>
-      <main id="top" className="overflow-x-clip">
+      <main id="top" className="min-w-0">
         <a
           href="#main-content"
           className="sr-only z-[100] rounded-full bg-primary px-4 py-3 text-primary-foreground focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
@@ -105,13 +79,13 @@ export default function Home() {
           Bỏ qua điều hướng
         </a>
 
-        <div className="flex items-center justify-center gap-2 bg-secondary px-4 py-2 text-center text-xs font-semibold tracking-wide text-[#765b31]">
+        <div className="flex items-center justify-center gap-2 bg-secondary px-4 py-2 text-center text-xs font-semibold tracking-wide text-secondary-foreground">
           <PawPrint aria-hidden="true" className="size-3.5" />
           Chăm bé bằng cả sự dịu dàng
         </div>
 
-        <header className="sticky top-0 z-40 border-b border-[#e9dec8] bg-background/95 backdrop-blur-md">
-          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-5 px-5 py-3 sm:px-8 md:flex-nowrap md:py-4">
+        <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur-md">
+          <div className="page-container flex items-center justify-between gap-3 py-3 md:py-4">
             <Link href="#top" className="flex shrink-0 items-center" aria-label="FoPet Service, trang chủ">
               <Image
                 src="/images/fopet-logo-transparent.png"
@@ -119,34 +93,32 @@ export default function Home() {
                 width={1024}
                 height={1024}
                 priority
-                className="size-16 object-cover"
+                className="size-14 object-cover md:size-16"
               />
             </Link>
 
-            <nav aria-label="Điều hướng chính" className="order-3 flex w-full items-center justify-center gap-4 border-t border-[#e9dec8] pt-3 text-[11px] font-semibold text-[#715a3d] sm:gap-6 sm:text-xs md:order-none md:w-auto md:gap-7 md:border-0 md:pt-0 md:text-sm">
-              <Link className="transition-colors hover:text-primary focus-visible:text-primary" href="#dich-vu">Dịch vụ</Link>
-              <Link className="transition-colors hover:text-primary focus-visible:text-primary" href="#san-pham">Sản phẩm</Link>
-              <Link className="transition-colors hover:text-primary focus-visible:text-primary" href="#lien-he">Liên hệ</Link>
-              <Link className="transition-colors hover:text-primary focus-visible:text-primary" href="#tin-tuc">Tin tức</Link>
+            <nav aria-label="Điều hướng chính" className="hidden items-center gap-6 text-sm font-semibold text-muted-foreground md:flex">
+              {navigationLinks.map((item) => <Link key={item.href} className="inline-flex min-h-11 items-center rounded-lg px-1 transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring" href={item.href}>{item.label}</Link>)}
             </nav>
 
-            <BookingLink>
-              Đặt lịch <ArrowUpRight aria-hidden="true" className="size-4" />
-            </BookingLink>
+            <div className="flex items-center gap-2">
+              <BookingLink className="px-4 sm:px-6">Đặt lịch <ArrowUpRight aria-hidden="true" className="size-4" /></BookingLink>
+              <MobileNavigation />
+            </div>
           </div>
         </header>
 
         <section id="main-content" className="mx-auto grid max-w-[1440px] items-center gap-8 px-5 pb-14 pt-10 sm:px-8 sm:pb-16 sm:pt-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-14 lg:py-16">
           <div className="max-w-2xl">
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-[11px] font-extrabold tracking-[0.12em] text-[#89692e]">
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-xs font-extrabold tracking-[0.12em] text-primary">
               <Sparkles aria-hidden="true" className="size-3.5" />
               XIN CHÀO, FoPet ĐÂY!
             </p>
-            <h1 className="max-w-[590px] font-heading text-[clamp(2.5rem,4.5vw,4.1rem)] font-normal leading-[1.08] tracking-[-0.05em] text-[#51371d]">
+            <h1 className="max-w-[590px] font-heading text-[clamp(2.1rem,3.6vw,3.25rem)] font-normal leading-[1.08] tracking-[-0.05em] text-foreground">
               Chăm bé khỏe vui,<br />
               <span className="text-primary">sen thêm an tâm.</span>
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-7 text-[#75654e]">
+            <p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground">
               FoPet Service là góc chăm sóc dành cho những người bạn bốn chân. Từ tắm gội, spa đến vui chơi ban ngày — chúng mình luôn lắng nghe tính cách và nhu cầu riêng của từng bé.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -155,6 +127,7 @@ export default function Home() {
               </BookingLink>
               <Button
                 nativeButton={false}
+                role="link"
                 render={<Link href="#dich-vu" />}
                 size="lg"
                 variant="secondary"
@@ -162,7 +135,7 @@ export default function Home() {
                 Khám phá dịch vụ <ArrowRight aria-hidden="true" className="size-4" />
               </Button>
             </div>
-            <p className="mt-5 text-xs leading-6 text-[#837153]">
+            <p className="mt-5 text-xs leading-6 text-muted-foreground">
               Giá và thời lượng được tư vấn theo kích thước, giống và tình trạng lông của bé.
             </p>
           </div>
@@ -185,26 +158,26 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-5 sm:px-8">
             <div className="mb-9 flex flex-col justify-between gap-4 sm:mb-12 sm:flex-row sm:items-end">
               <div>
-                <p className="mb-3 text-[11px] font-extrabold tracking-[0.15em] text-primary">COMBO CHĂM SÓC</p>
-                <h2 className="font-heading text-2xl leading-tight tracking-tight text-[#54381c] sm:text-3xl lg:text-4xl">Chọn niềm vui <span className="text-primary">cho bé.</span></h2>
+                <p className="section-eyebrow">COMBO CHĂM SÓC</p>
+                <h2 className="section-title">Chọn niềm vui <span className="text-primary">cho bé.</span></h2>
               </div>
-              <p className="max-w-md text-sm leading-7 text-[#75654e] sm:text-right">Các combo được thiết kế gọn gàng để sen dễ chọn. Giá cuối cùng tùy theo cân nặng và tình trạng thực tế của bé.</p>
+              <p className="max-w-md text-sm leading-7 text-muted-foreground sm:text-right">Các combo được thiết kế gọn gàng để sen dễ chọn. Giá cuối cùng tùy theo cân nặng và tình trạng thực tế của bé.</p>
             </div>
 
             <div className="grid gap-5 md:grid-cols-3">
               {servicePackages.map((service) => {
                 const Icon = serviceIcons[service.id];
                 return (
-                  <Card key={service.id} className="group h-full overflow-hidden rounded-[1.6rem] border border-[#e9dec8] bg-background py-0 shadow-none ring-0 transition-colors hover:border-primary/40">
+                  <Card key={service.id} className="group h-full overflow-hidden rounded-[1.6rem] border border-border bg-background py-0 shadow-none ring-0 transition-colors hover:border-primary/40">
                     <CardContent className="flex h-full flex-col p-6">
                       <div aria-hidden="true" className="mb-5 flex h-20 items-center">
                         <span className="grid size-20 place-items-center rounded-3xl bg-secondary text-primary">
                           <Icon className="size-12" strokeWidth={1.7} />
                         </span>
                       </div>
-                      <h3 className="font-heading text-xl font-bold text-[#5a3c20]">{service.name}</h3>
-                      <p className="mt-2 min-h-[3rem] text-sm leading-6 text-[#74644d]">{service.description}</p>
-                      <ul className="my-5 space-y-2 text-sm leading-6 text-[#74644d]" aria-label={`Nội dung mẫu của ${service.name}`}>
+                      <h3 className="font-heading text-xl font-bold text-foreground">{service.name}</h3>
+                      <p className="mt-2 min-h-[3rem] text-sm leading-6 text-muted-foreground">{service.description}</p>
+                      <ul className="my-5 space-y-2 text-sm leading-6 text-muted-foreground" aria-label={`Nội dung mẫu của ${service.name}`}>
                         {service.includes.map((item) => (
                           <li key={item} className="flex items-start gap-2">
                             <Check aria-hidden="true" className="mt-1 size-4 shrink-0 text-primary" />
@@ -213,9 +186,9 @@ export default function Home() {
                         ))}
                       </ul>
                       <div className="mt-auto border-t border-border pt-5">
-                        <p className="text-xs font-semibold text-[#887451]">Giá tham khảo từ</p>
+                        <p className="text-xs font-semibold text-muted-foreground">Giá tham khảo từ</p>
                         <p className="mt-1 text-2xl font-extrabold tracking-tight text-primary">{service.price}</p>
-                        <p className="mt-1 text-xs text-[#887451]">{service.detail}</p>
+                        <p className="mt-1 text-xs text-muted-foreground">{service.detail}</p>
                         <BookingLink
                           serviceId={service.id}
                           aria-label={`Chọn ${service.name} và điền thông tin đặt lịch`}
@@ -230,27 +203,42 @@ export default function Home() {
                 );
               })}
             </div>
-            <p className="mt-5 text-center text-xs leading-6 text-[#827052]">Nội dung combo và giá là mẫu minh họa. FoPet sẽ tư vấn và xác nhận trước khi phục vụ.</p>
+            <p className="mt-5 text-center text-xs leading-6 text-muted-foreground">Nội dung combo và giá là mẫu minh họa. FoPet sẽ tư vấn và xác nhận trước khi phục vụ.</p>
           </div>
         </section>
 
         <CareJourney />
 
+        <section id="dat-lich" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24">
+          <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:gap-16">
+            <div className="max-w-lg">
+              <p className="section-eyebrow">ĐẶT LỊCH CHO BÉ</p>
+              <h2 className="section-title">Hẹn FoPet <span className="text-primary">một ngày vui.</span></h2>
+              <p className="mt-4 text-sm leading-7 text-muted-foreground">Thử chọn combo và điền thông tin của bạn cùng bé. Quy trình dự kiến sẽ có bước tư vấn và xác nhận thời gian trước buổi hẹn.</p>
+              <div className="mt-6 flex items-start gap-3 rounded-2xl bg-secondary p-4 text-sm leading-6 text-secondary-foreground">
+                <PawPrint aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-primary" />
+                <p>Gửi yêu cầu chưa đồng nghĩa với việc lịch đã được giữ chỗ. Lịch chỉ được xác nhận sau khi FoPet liên hệ với bạn.</p>
+              </div>
+            </div>
+            <BookingForm />
+          </div>
+        </section>
+
         <section id="san-pham" className="py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-5 sm:px-8">
             <div className="mb-9 flex flex-col justify-between gap-4 sm:mb-12 sm:flex-row sm:items-end">
               <div>
-                <p className="mb-3 text-[11px] font-extrabold tracking-[0.15em] text-primary">GÓC ĐỒ DÙNG FoPet</p>
-                <h2 className="font-heading text-2xl leading-tight tracking-tight text-[#54381c] sm:text-3xl lg:text-4xl">Chọn món quà <span className="text-primary">cho bé.</span></h2>
+                <p className="section-eyebrow">GÓC ĐỒ DÙNG FoPet</p>
+                <h2 className="section-title">Chọn món quà <span className="text-primary">cho bé.</span></h2>
               </div>
-              <p className="max-w-md text-sm leading-7 text-[#75654e] sm:text-right">Một vài sản phẩm gợi ý cho bữa ăn, giờ chơi và chăm sóc hằng ngày.</p>
+              <p className="max-w-md text-sm leading-7 text-muted-foreground sm:text-right">Một vài sản phẩm gợi ý cho bữa ăn, giờ chơi và chăm sóc hằng ngày.</p>
             </div>
 
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {products.map((product) => {
                 const Icon = product.icon;
                 return (
-                  <Card key={product.name} className="h-full overflow-hidden rounded-[1.5rem] border border-[#e9dec8] bg-background py-0 shadow-none ring-0">
+                  <Card key={product.name} className="h-full overflow-hidden rounded-[1.5rem] border border-border bg-background py-0 shadow-none ring-0">
                     <CardContent className="flex h-full flex-col p-0">
                       <div aria-hidden="true" className="flex h-36 shrink-0 items-center justify-center bg-secondary/60">
                         <span className="grid size-20 place-items-center rounded-full bg-background text-primary">
@@ -258,12 +246,12 @@ export default function Home() {
                         </span>
                       </div>
                       <div className="flex flex-1 flex-col p-5">
-                        <p className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-primary">{product.category}</p>
-                        <h3 className="mt-2 font-heading text-lg font-bold text-[#5a3c20]">{product.name}</h3>
-                        <p className="mt-2 min-h-12 text-sm leading-6 text-[#74644d]">{product.description}</p>
+                        <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-primary">{product.category}</p>
+                        <h3 className="mt-2 font-heading text-lg font-bold text-foreground">{product.name}</h3>
+                        <p className="mt-2 min-h-12 text-sm leading-6 text-muted-foreground">{product.description}</p>
                         <div className="mt-auto flex flex-wrap items-baseline gap-x-1.5 gap-y-1 pt-4">
                           <p className="text-xl font-extrabold tracking-tight text-primary">{product.price}</p>
-                          <p className="text-xs text-[#887451]">{product.unit}</p>
+                          <p className="text-xs text-muted-foreground">{product.unit}</p>
                         </div>
                       </div>
                     </CardContent>
@@ -273,62 +261,25 @@ export default function Home() {
             </div>
 
             <div className="mt-8 flex flex-col items-center gap-3">
-              <Button disabled size="lg" variant="secondary">
+              <span className="rounded-full bg-secondary px-3 py-1.5 text-xs font-semibold text-secondary-foreground">Sắp ra mắt</span>
+              <Button disabled size="lg" variant="secondary" aria-describedby="products-status">
                 Xem nhiều sản phẩm <ArrowRight aria-hidden="true" className="size-4" />
               </Button>
-              <p className="text-xs text-[#827052]">Danh mục sản phẩm sẽ được cập nhật trong các bước phát triển tiếp theo.</p>
+              <p id="products-status" className="max-w-md text-center text-sm leading-6 text-muted-foreground">Danh mục đang được chuẩn bị. Các sản phẩm và mức giá trên đây là minh họa; tính năng mua hàng sẽ được phát triển sau.</p>
             </div>
           </div>
         </section>
 
-        <section id="tin-tuc" className="overflow-hidden bg-secondary/70 py-16 sm:py-20">
-          <div className="mx-auto mb-9 flex max-w-7xl flex-col justify-between gap-4 px-5 sm:mb-12 sm:flex-row sm:items-end sm:px-8">
-            <div>
-              <p className="mb-3 text-[11px] font-extrabold tracking-[0.15em] text-primary">CÂU CHUYỆN FoPet</p>
-              <h2 className="font-heading text-2xl leading-tight tracking-tight text-[#54381c] sm:text-3xl lg:text-4xl">Tin vui và mẹo <span className="text-primary">chăm bé.</span></h2>
-            </div>
-            <p className="max-w-md text-sm leading-7 text-[#75654e] sm:text-right">Một vài bài viết minh họa để bạn khám phá thêm về thế giới thú cưng.</p>
-          </div>
-
-          <div className="news-marquee overflow-hidden" role="group" aria-roledescription="carousel" aria-label="Tin tức và mẹo chăm sóc thú cưng" tabIndex={0}>
-            <div className="news-track flex w-max">
-              {[false, true].map((isDuplicate) => (
-                <div key={String(isDuplicate)} aria-hidden={isDuplicate} className="flex shrink-0 gap-5 pr-5">
-                  {newsItems.map((article) => {
-                    const Icon = article.icon;
-                    return (
-                      <article key={article.title} className="w-[82vw] max-w-[340px] shrink-0 overflow-hidden rounded-[1.5rem] border border-[#e9dec8] bg-background">
-                        <div className="flex h-36 items-center justify-center bg-[#eadcb5] text-primary">
-                          <span className="grid size-16 place-items-center rounded-full bg-background/80">
-                            <Icon aria-hidden="true" className="size-8" strokeWidth={1.7} />
-                          </span>
-                        </div>
-                        <div className="p-5">
-                          <p className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-primary">{article.category}</p>
-                          <h3 className="mt-2 font-heading text-lg font-bold leading-snug text-[#5a3c20]">{article.title}</h3>
-                          <p className="mt-2 text-sm leading-6 text-[#74644d]">{article.description}</p>
-                        </div>
-                      </article>
-                    );
-                  })}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="dat-lich" className="mx-auto max-w-7xl scroll-mt-36 px-5 py-16 sm:px-8 sm:py-24 md:scroll-mt-28">
-          <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:gap-16">
-            <div className="max-w-lg">
-              <p className="mb-3 text-[11px] font-extrabold tracking-[0.15em] text-primary">ĐẶT LỊCH CHO BÉ</p>
-              <h2 className="font-heading text-2xl leading-tight tracking-tight text-[#54381c] sm:text-3xl lg:text-4xl">Hẹn FoPet <span className="text-primary">một ngày vui.</span></h2>
-              <p className="mt-4 text-sm leading-7 text-[#75654e]">Để lại thông tin và combo bạn quan tâm. Nhân viên sẽ liên hệ để tư vấn, kiểm tra lịch trống và xác nhận thời gian phù hợp.</p>
-              <div className="mt-6 flex items-start gap-3 rounded-2xl bg-secondary p-4 text-sm leading-6 text-[#70552f]">
-                <PawPrint aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-primary" />
-                <p>Gửi yêu cầu chưa đồng nghĩa với việc lịch đã được giữ chỗ. Lịch chỉ được xác nhận sau khi FoPet liên hệ với bạn.</p>
+        <section id="tin-tuc" className="section-space bg-secondary/70">
+          <div className="page-container">
+            <div className="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+              <div>
+                <p className="section-eyebrow">CÂU CHUYỆN FoPet</p>
+                <h2 className="section-title">Tin vui và mẹo <span className="text-primary">chăm bé.</span></h2>
               </div>
+              <p className="max-w-md text-sm leading-7 text-muted-foreground sm:text-right">Một vài bài viết minh họa để bạn khám phá thêm về thế giới thú cưng.</p>
             </div>
-            <BookingForm />
+            <NewsCarousel />
           </div>
         </section>
 
@@ -339,7 +290,7 @@ export default function Home() {
           <div className="page-container grid gap-8 py-10 sm:grid-cols-2 lg:grid-cols-[1.1fr_.7fr_1.2fr]">
             <div>
               <Link href="#top" className="inline-flex items-center gap-3 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring" aria-label="FoPet Service, lên đầu trang">
-                <Image src="/images/fopet-logo-transparent.png" alt="Logo FoPet Service" width={1024} height={1024} className="size-16 object-contain" />
+                <Image src="/images/fopet-logo-transparent.png" alt="Logo FoPet Service" width={1024} height={1024} className="size-16 object-cover" />
                 <span className="font-heading text-xl text-foreground">FoPet Service</span>
               </Link>
               <p className="mt-3 max-w-xs text-sm leading-6 text-muted-foreground">Chăm bé bằng cả sự dịu dàng. Một nơi để sen khám phá dịch vụ và đồ dùng dành cho những người bạn bốn chân.</p>

@@ -6,24 +6,26 @@
 
 /* FoPet brand palette: warm cream and soft antique gold. */
 :root {
-  --background: oklch(0.985 0.018 88);
-  --foreground: oklch(0.31 0.045 55);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.31 0.045 55);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.31 0.045 55);
-  --primary: oklch(0.57 0.11 75);
-  --primary-foreground: oklch(0.28 0.045 55);
-  --secondary: oklch(0.94 0.035 85);
-  --secondary-foreground: oklch(0.38 0.07 58);
-  --muted: oklch(0.96 0.015 92);
-  --muted-foreground: oklch(0.51 0.035 62);
-  --accent: oklch(0.93 0.035 85);
-  --accent-foreground: oklch(0.38 0.07 55);
-  --destructive: oklch(0.58 0.22 25);
-  --border: oklch(0.91 0.025 85);
-  --input: oklch(0.91 0.025 85);
-  --ring: oklch(0.62 0.11 75);
+  --background: #fffaf0;
+  --foreground: #48321e;
+  --card: #fffdf7;
+  --card-foreground: var(--foreground);
+  --popover: var(--card);
+  --popover-foreground: var(--foreground);
+  --primary: #80602b;
+  --primary-hover: #6c4f24;
+  --primary-foreground: #fffaf0;
+  --secondary: #f4ead5;
+  --secondary-foreground: #664d2a;
+  --muted: #f8f1e3;
+  --muted-foreground: #75634e;
+  --accent: #ead9b7;
+  --accent-foreground: var(--foreground);
+  --destructive: #a12b26;
+  --border: #e6d9c1;
+  --input: #d8c6a6;
+  --ring: var(--primary);
+  --header-offset: 6.5rem;
   --radius: 1.15rem;
 }
 
@@ -37,6 +39,7 @@
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
@@ -61,21 +64,36 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-offset);
 }
 
-.news-track {
-  animation: fopet-news-loop 36s linear infinite;
+main section[id],
+#booking-form-title,
+input,
+select,
+textarea {
+  scroll-margin-top: 1rem;
 }
 
-.news-marquee:hover .news-track,
-.news-marquee:focus-within .news-track {
-  animation-play-state: paused;
+.news-viewport {
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
 }
 
-@keyframes fopet-news-loop {
-  to {
-    transform: translateX(-50%);
-  }
+.news-card {
+  flex: 0 0 calc(100% - 1rem);
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 640px) {
+  .news-card { flex-basis: calc((100% - 1.25rem) / 2); }
+}
+
+@media (min-width: 1024px) {
+  .news-card { flex-basis: calc((100% - 2.5rem) / 3); }
 }
 
 body {
@@ -101,8 +119,8 @@ body {
 }
 
 ::selection {
-  background: #eadcb5;
-  color: #523719;
+  background: var(--accent);
+  color: var(--foreground);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -110,11 +128,9 @@ body {
     scroll-behavior: auto;
   }
 
-  .news-marquee {
-    overflow-x: auto;
-  }
-
-  .news-track {
-    animation: none;
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
