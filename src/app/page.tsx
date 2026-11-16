@@ -26,6 +26,7 @@ import { ContactSection } from "@/components/contact-section";
 import { navigationLinks, shopContact } from "@/lib/site-config";
 import { MobileNavigation } from "@/components/mobile-navigation";
 import { NewsCarousel } from "@/components/news-carousel";
+import { Badge as AstryxBadge, Card as AstryxCard } from "@astryxdesign/core";
 
 const serviceIcons: Record<ServiceId, typeof Bath> = {
   bath: Bath,
@@ -140,8 +141,13 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="relative mx-auto w-full max-w-[780px] lg:justify-self-end">
-            <div className="relative aspect-[1.83/1] overflow-hidden rounded-[2rem] bg-secondary sm:rounded-[2.5rem]">
+          <AstryxCard
+            className="relative mx-auto w-full max-w-[780px] overflow-hidden rounded-[2rem] border-0 bg-secondary p-0 sm:rounded-[2.5rem] lg:justify-self-end"
+            elevation="none"
+            padding={0}
+            variant="muted"
+          >
+            <div className="relative aspect-[1.83/1] overflow-hidden">
               <Image
                 src="/images/fopet-illustration.png"
                 alt="Minh họa FoPet với dịch vụ chăm sóc, spa, huấn luyện thú cưng và cửa hàng đồ dùng"
@@ -151,7 +157,14 @@ export default function Home() {
                 className="object-cover"
               />
             </div>
-          </div>
+            <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-2xl bg-background/95 px-4 py-3 backdrop-blur-sm sm:bottom-5 sm:left-5 sm:right-5 sm:px-5">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.12em] text-primary">Một ngày thật vui</p>
+                <p className="mt-1 text-sm font-semibold text-foreground">Bé được chăm theo cách riêng</p>
+              </div>
+              <AstryxBadge label="Đang nhận lịch" />
+            </div>
+          </AstryxCard>
         </section>
 
         <section id="dich-vu" className="bg-secondary/70 py-16 sm:py-20">

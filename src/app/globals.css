@@ -1,4 +1,10 @@
+@layer reset, theme, base, astryx-base, astryx-theme, components, utilities;
+
 @import "tailwindcss";
+@import "@astryxdesign/core/reset.css";
+@import "@astryxdesign/core/astryx.css";
+@import "@astryxdesign/theme-neutral/theme.css";
+@import "@astryxdesign/core/tailwind-theme.css";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
@@ -6,6 +12,8 @@
 
 /* FoPet brand palette: warm cream and soft antique gold. */
 :root {
+  --font-nunito: "Nunito Sans", "Segoe UI", sans-serif;
+  --font-varela: "Varela Round", "Trebuchet MS", sans-serif;
   --background: #fffaf0;
   --foreground: #48321e;
   --card: #fffdf7;
