@@ -12,6 +12,8 @@
 
 /* FoPet brand palette: warm cream and soft antique gold. */
 :root {
+  --font-nunito: "Nunito Sans", "Segoe UI", sans-serif;
+  --font-varela: "Varela Round", "Trebuchet MS", sans-serif;
   --background: #fffaf0;
   --foreground: #48321e;
   --card: #fffdf7;

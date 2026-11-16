@@ -1,21 +1,6 @@
 import type { Metadata } from "next";
-import { Nunito_Sans, Varela_Round } from "next/font/google";
 import "./globals.css";
 import { FopetProviders } from "./providers";
-
-const nunito = Nunito_Sans({
-  variable: "--font-nunito",
-  subsets: ["latin", "vietnamese"],
-  weight: ["400", "500", "600", "700", "800"],
-  display: "swap",
-});
-
-const varela = Varela_Round({
-  variable: "--font-varela",
-  subsets: ["latin", "vietnamese"],
-  weight: "400",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "FoPet Service | Chăm bé bằng cả sự dịu dàng",
@@ -33,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi" className={`${nunito.variable} ${varela.variable}`}>
+    <html lang="vi">
       <body><FopetProviders>{children}</FopetProviders></body>
     </html>
   );
