@@ -7,3 +7,10 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+## FoPet UI rules
+
+- Use Astryx as the shared React design system and keep its theme provider configured in `src/app/providers.tsx`.
+- Do not add AI-generated icon packs, emoji icons, hand-drawn SVG icons, or mixed icon families.
+- When an icon is needed, use the existing `lucide-react` set consistently. Decorative icons must have `aria-hidden="true"`; action icons need an accessible label.
+- Keep the FoPet palette, rounded controls, and existing Tailwind/shadcn composition consistent with the Astryx theme.

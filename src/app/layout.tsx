@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito_Sans, Varela_Round } from "next/font/google";
 import "./globals.css";
+import { FopetProviders } from "./providers";
 
 const nunito = Nunito_Sans({
   variable: "--font-nunito",
@@ -33,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi" className={`${nunito.variable} ${varela.variable}`}>
-      <body>{children}</body>
+      <body><FopetProviders>{children}</FopetProviders></body>
     </html>
   );
 }
